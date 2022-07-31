@@ -11,11 +11,13 @@ import java.util.List;
 
 @Repository
 public interface ProductDao extends JpaRepository<Product, Long> {
+
     @Query("select product from Product product")
     List<Product> findAll();
 
     @Query("select product from Product product where product.Id=:Id")
     Product findAllById(@Param("Id") Long Id);
+
 
     @Query("select product from Product product where product.title=:title")
     Product findAllByTitle(@Param("title") String title);
@@ -29,5 +31,10 @@ public interface ProductDao extends JpaRepository<Product, Long> {
 
     @Query("delete from Product product where product.Id=:productId")
     void deleteById(@Param("productId") Long productId);
+
+
+    List<Product> findAllIsDeleted(Boolean isDeleted);
+
+
 
 }

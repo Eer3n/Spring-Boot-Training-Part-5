@@ -1,20 +1,20 @@
 
-Question 1.1
-    - create a converter for Product Entity
-    - create an enum entity called Categories for product entity and 10 different possible product categories
-    - create a ProductDto
+Question 1.1(+)
+    - create a converter for Product Entity (+)
+    - create an enum entity called Categories for product entity and 10 different possible product categories (+)
+    - create a ProductDto (+)
         - once ProductDto is created, then should create Its converter class
         - write an endpoint which takes ProductDto and converts + saves new Product Entity into database
-    - create SellerDto
+    - create SellerDto(+)
 
 Question 1.2
     - this question written vague just to test your newly obtained engineering skills :) In the future you'll determine
-    architectural structures and thus should have a mindset of software architect.
+    architectural structures and thus should have a mindset of software architect. (-)
 
     create an entity called Basket which holds the basket information of given Buyer.
     - you should be able to determine which properties should It has.
     - write all the necessary things for It! such as endpoint, services, you name it...
 
-Question 2
+Question 2 (+)
     - what types of Design Patterns do we have
     - give two examples for creational design patterns along with their purpose.

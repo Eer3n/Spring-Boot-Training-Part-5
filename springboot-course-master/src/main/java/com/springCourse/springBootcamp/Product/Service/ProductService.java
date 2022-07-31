@@ -1,6 +1,8 @@
 package com.springCourse.springBootcamp.Product.Service;
 
+import com.springCourse.springBootcamp.Product.Converter.ProductConverter;
 import com.springCourse.springBootcamp.Product.Dao.ProductDao;
+import com.springCourse.springBootcamp.Product.Dto.ProductDto;
 import com.springCourse.springBootcamp.Product.Entity.Product;
 import com.springCourse.springBootcamp.Seller.Entity.Seller;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +15,8 @@ import java.util.List;
 public class ProductService {
 
     private final ProductDao productDao;
+
+    private final ProductConverter productConverter;
 
     public List<Product> findAll() {
         return productDao.findAll();
@@ -42,4 +46,10 @@ public class ProductService {
         productDao.delete(product);
     }
 
-}
+    public Product createNewFromDto(ProductDto productDto){
+        Product product = productConverter.convertFromDto(productDto);
+        productDao.save(product);
+        return product;
+    }
+
+   }
